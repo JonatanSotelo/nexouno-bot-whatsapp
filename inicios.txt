@@ -1,0 +1,26 @@
+Cómo probar hoy (local)
+
+1. crear venv e instalar:
+
+python -m venv .venv
+# Win: .venv\Scripts\activate
+# Linux/Mac:
+source .venv/Scripts/activate
+pip install -r requirements.txt
+
+2. correr tenant A desde la carpeta outbox:
+bash run_tenant.sh cliente_a
+# o en Windows: run_tenant.bat cliente_a
+
+3. probar sin Meta:
+
+curl -X POST http://localhost:8000/simulate/message \
+  -H 'Content-Type: application/json' \
+  -d '{"to":"54911XXXXXXX","text":"Prueba envío"}'
+
+
+4. simular confirmación y generación del TXT (queda en outbox/):
+
+curl -X POST http://localhost:8000/confirmar \
+  -H 'Content-Type: application/json' \
+  -d '{"to":"54911XXXXXXX","resumen":"Pedido de 2 racks + 4 baterías"}'

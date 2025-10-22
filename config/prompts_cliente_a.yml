@@ -1,0 +1,3 @@
+greet_template: "Hola {name}! Soy FidelBot. ¿Querés que tome tu pedido?"
+confirm_template: "Gracias! Confirmá: {summary}"
+file_prefix: "pedido_cliente_a"

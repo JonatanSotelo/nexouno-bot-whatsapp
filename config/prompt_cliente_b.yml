@@ -1,0 +1,3 @@
+greet_template: "Hola {name}! Te ayudo con tu pedido."
+confirm_template: "¿Está bien esto?: {summary}"
+file_prefix: "pedido_cliente_b"
